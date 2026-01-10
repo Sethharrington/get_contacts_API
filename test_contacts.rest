@@ -7,66 +7,13 @@ GET http://localhost:8080/contacts
 ### Get contact by ID
 GET http://localhost:8080/contacts/687aa30e0fbc449862c7b106
 
-### Create a new contact
-POST http://localhost:8080/contacts
-Content-Type: application/json
-
-{
-  "firstName": "FirstName",
-  "lastName": "LastName",
-  "email": "email@ts.co",
-  "favoriteColor": "Gray",
-  "birthday": "01/20/3043"
-}
-
-### Update a contact by ID
-PUT http://localhost:8080/contacts/68827a09a7cd125bba8b3876
-Content-Type: application/json
-
-{
-  "firstName": "UpdatedFirstName",
-  "lastName": "UpdatedLastName",
-  "email": "updatedemail@ts.co",
-  "favoriteColor": "Blue",
-  "birthday": "01/20/3043"
-}
-
-### Delete a contact by ID
-DELETE http://localhost:8080/contacts/68827a09a7cd125bba8b3876
-
 
 //////////////////////////////////
 //          PRODUCTION          //
 //////////////////////////////////
 ### Get all contacts
-GET https://cse341-web-services-1qxq.onrender.com/contacts
+GET https://get-contacts-api.onrender.com/contacts
 
 ### Get contact by ID
-GET https://cse341-web-services-1qxq.onrender.com/contacts/687aa30e0fbc449862c7b106
+GET https://get-contacts-api.onrender.com/contacts/687aa30e0fbc449862c7b106
 
-### Create a new contact
-POST https://cse341-web-services-1qxq.onrender.com/contacts
-Content-Type: application/json
-
-{
-  "firstName": "FirstName",
-  "lastName": "LastName",
-  "email": "email@ts.co",
-  "favoriteColor": "Gray",
-  "birthday": "01/20/3043"
-}
-
-### Update a contact by ID
-PUT https://cse341-web-services-1qxq.onrender.com/contacts/68827a09a7cd125bba8b3876
-Content-Type: application/json
-
-{
-  "firstName": "UpdatedFirstName",
-  "lastName": "UpdatedLastName",
-  "email": "updatedemail@ts.co",
-  "favoriteColor": "Blue",
-  "birthday": "01/20/3043"
-}
-
-### Delete a contact by ID
-DELETE https://cse341-web-services-1qxq.onrender.com/contacts/68827a09a7cd125bba8b3876
