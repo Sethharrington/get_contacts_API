@@ -5,8 +5,8 @@ const doc = {
     title: "My API",
     description: "Description",
   },
-  // host: "https://<url>.onrender.com",
-  host: "localhost:8080", // Use localhost for local development
+  host: "https://get-contacts-api.onrender.com",
+  // host: "localhost:8080", // Use localhost for local development
   schemes: ["http", "https"], // Use both https and http for production
 };
 
