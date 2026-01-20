@@ -1,5 +1,5 @@
 const swaggerAutogen = require("swagger-autogen")();
-
+const contact = require("./src/models/contact.json");
 const doc = {
   info: {
     title: "My API",
@@ -8,6 +8,9 @@ const doc = {
   host: "get-contacts-api.onrender.com",
   // host: "localhost:8080", // Use localhost for local development
   schemes: ["http", "https"], // Use both https and http for production
+  definitions: {
+    Contact: contact,
+  },
 };
 
 const outputFile = "./swagger.json";

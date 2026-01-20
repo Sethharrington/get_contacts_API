@@ -5,7 +5,7 @@
     "description": "Description",
     "version": "1.0.0"
   },
-  "host": "get-contacts-api.onrender.com",
+  "host": "localhost:8080",
   "basePath": "/",
   "schemes": [
     "http",
@@ -28,7 +28,10 @@
         }
       },
       "post": {
-        "description": "",
+        "tags": [
+          "Contacts"
+        ],
+        "description": "Create a new contact",
         "produces": [
           "application/json"
         ],
@@ -36,25 +39,10 @@
           {
             "name": "body",
             "in": "body",
+            "description": "Contact information",
+            "required": true,
             "schema": {
-              "type": "object",
-              "properties": {
-                "firstName": {
-                  "example": "any"
-                },
-                "lastName": {
-                  "example": "any"
-                },
-                "email": {
-                  "example": "any"
-                },
-                "favoriteColor": {
-                  "example": "any"
-                },
-                "birthday": {
-                  "example": "any"
-                }
-              }
+              "$ref": "#/definitions/Contact"
             }
           }
         ],
@@ -92,7 +80,10 @@
         }
       },
       "put": {
-        "description": "",
+        "tags": [
+          "Contacts"
+        ],
+        "description": "Create a new contact",
         "produces": [
           "application/json"
         ],
@@ -106,25 +97,10 @@
           {
             "name": "body",
             "in": "body",
+            "description": "Contact information",
+            "required": true,
             "schema": {
-              "type": "object",
-              "properties": {
-                "firstName": {
-                  "example": "any"
-                },
-                "lastName": {
-                  "example": "any"
-                },
-                "email": {
-                  "example": "any"
-                },
-                "favoriteColor": {
-                  "example": "any"
-                },
-                "birthday": {
-                  "example": "any"
-                }
-              }
+              "$ref": "#/definitions/Contact"
             }
           }
         ],
@@ -157,6 +133,33 @@
           "500": {
             "description": "Internal Server Error"
           }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Contact": {
+      "type": "object",
+      "properties": {
+        "firstName": {
+          "type": "string",
+          "example": ""
+        },
+        "lastName": {
+          "type": "string",
+          "example": ""
+        },
+        "email": {
+          "type": "string",
+          "example": ""
+        },
+        "favoriteColor": {
+          "type": "string",
+          "example": ""
+        },
+        "birthday": {
+          "type": "string",
+          "example": ""
         }
       }
     }

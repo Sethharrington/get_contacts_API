@@ -20,7 +20,7 @@ Content-Type: application/json
 }
 
 ### Update a contact by ID
-PUT http://localhost:8080/contacts/696fdd0f785d94676a53991a
+PUT http://localhost:8080/contacts/696ffad198e6437cc8907dfc
 Content-Type: application/json
 
 {
@@ -32,7 +32,7 @@ Content-Type: application/json
 }
 
 ### Delete a contact by ID
-DELETE http://localhost:8080/contacts/68827a09a7cd125bba8b3876
+DELETE http://localhost:8080/contacts/696ffad198e6437cc8907dfc
 
 
 //////////////////////////////////
@@ -45,7 +45,7 @@ GET https://get-contacts-api.onrender.com/contacts
 GET https://get-contacts-api.onrender.com/contacts/687aa30e0fbc449862c7b106
 
 ### Create a new contact
-POST https://get-contacts-api.onrender.com/contacts
+POST https://get-contacts-api.onrender.com/contacts/
 Content-Type: application/json
 
 {
@@ -57,7 +57,7 @@ Content-Type: application/json
 }
 
 ### Update a contact by ID
-PUT https://get-contacts-api.onrender.com/contacts/68827a09a7cd125bba8b3876
+PUT https://get-contacts-api.onrender.com/contacts/696fe3d269b8fc873516788c
 Content-Type: application/json
 
 {

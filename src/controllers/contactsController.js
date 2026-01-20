@@ -1,7 +1,5 @@
 const mongodb = require("../database/connect");
 const ObjectId = require("mongodb").ObjectId;
-const db = require("../models/contact");
-const Contact = db.Contact;
 
 const getAll = async (req, res) => {
   const result = await mongodb.getDatabase().collection("Contacts").find({});
@@ -35,15 +33,18 @@ const getById = async (req, res) => {
 };
 
 const createContact = async (req, res) => {
+  /* 
+    #swagger.tags = ['Contacts']
+    #swagger.description = 'Create a new contact'
+    #swagger.parameters['body'] = {
+      in: 'body',
+      description: 'Contact information',
+      required: true,
+      schema: { $ref: '#/definitions/Contact' }
+    }
+  */
   console.log("Creating contact with data:", req.body);
-  const newContact = Contact({
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    email: req.body.email,
-    favoriteColor: req.body.favoriteColor,
-    birthday: req.body.birthday,
-  });
-
+  const newContact = req.body;
   const result = await mongodb
     .getDatabase()
     .collection("Contacts")
@@ -58,15 +59,18 @@ const createContact = async (req, res) => {
 };
 
 const updateContact = async (req, res) => {
+  /* 
+    #swagger.tags = ['Contacts']
+    #swagger.description = 'Create a new contact'
+    #swagger.parameters['body'] = {
+      in: 'body',
+      description: 'Contact information',
+      required: true,
+      schema: { $ref: '#/definitions/Contact' }
+    }
+  */
   const contactId = new ObjectId(req.params.id);
-  const updatedContact = Contact({
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    email: req.body.email,
-    favoriteColor: req.body.favoriteColor,
-    birthday: req.body.birthday,
-  });
-
+  const updatedContact = req.body;
   const result = await mongodb
     .getDatabase()
     .collection("Contacts")
