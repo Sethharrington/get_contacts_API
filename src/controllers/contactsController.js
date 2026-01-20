@@ -1,5 +1,7 @@
 const mongodb = require("../database/connect");
 const ObjectId = require("mongodb").ObjectId;
+const db = require("../models/contact");
+const Contact = db.Contact;
 
 const getAll = async (req, res) => {
   const result = await mongodb.getDatabase().collection("Contacts").find({});
@@ -34,13 +36,14 @@ const getById = async (req, res) => {
 
 const createContact = async (req, res) => {
   console.log("Creating contact with data:", req.body);
-  const newContact = {
+  const newContact = Contact({
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     email: req.body.email,
     favoriteColor: req.body.favoriteColor,
     birthday: req.body.birthday,
-  };
+  });
+
   const result = await mongodb
     .getDatabase()
     .collection("Contacts")
@@ -56,13 +59,13 @@ const createContact = async (req, res) => {
 
 const updateContact = async (req, res) => {
   const contactId = new ObjectId(req.params.id);
-  const updatedContact = {
+  const updatedContact = Contact({
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     email: req.body.email,
     favoriteColor: req.body.favoriteColor,
     birthday: req.body.birthday,
-  };
+  });
 
   const result = await mongodb
     .getDatabase()
