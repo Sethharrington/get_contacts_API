@@ -34,7 +34,13 @@ const getById = async (req, res) => {
 
 const createContact = async (req, res) => {
   console.log("Creating contact with data:", req.body);
-  const newContact = req.body;
+  const newContact = {
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    favoriteColor: req.body.favoriteColor,
+    birthday: req.body.birthday,
+  };
   const result = await mongodb
     .getDatabase()
     .collection("Contacts")
@@ -50,7 +56,14 @@ const createContact = async (req, res) => {
 
 const updateContact = async (req, res) => {
   const contactId = new ObjectId(req.params.id);
-  const updatedContact = req.body;
+  const updatedContact = {
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    favoriteColor: req.body.favoriteColor,
+    birthday: req.body.birthday,
+  };
+
   const result = await mongodb
     .getDatabase()
     .collection("Contacts")
