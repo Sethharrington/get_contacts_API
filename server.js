@@ -8,6 +8,13 @@ const swaggerDocument = require("./swagger.json");
 
 const port = process.env.PORT || 8080;
 
+// Error Hangling
+const {
+  logError,
+  returnError,
+  isOperationalError,
+} = require("./src/error-handling/errorHandler");
+
 /* ***********************
  * Middleware
  * ************************/
@@ -26,12 +33,38 @@ app.use((req, res, next) => {
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
   next();
 });
+
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 /* ***********************
  * Routes
  *************************/
 app.use("/", require("./src/routes"));
+
+/* ***********************
+ * Error Handling
+ *************************/
+app.use(logError);
+app.use(returnError);
+
+process.on("uncaughtException", (error, origin) => {
+  logError(
+    (process.stderr.id,
+    `Caught exception: ${error}
+    Exception origin: ${origin}`),
+  );
+
+  if (!isOperationalError(error)) {
+    process.exit(1);
+  }
+});
+process.on("unhandledRejection", (error) => {
+  logError(error);
+
+  if (!isOperationalError(error)) {
+    process.exit(1);
+  }
+});
 
 /* ***********************
  * Log statement to confirm server operation

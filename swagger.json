@@ -5,7 +5,7 @@
     "description": "Description",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "get-contacts-api.onrender.com",
   "basePath": "/",
   "schemes": [
     "http",
@@ -14,16 +14,16 @@
   "paths": {
     "/contacts/": {
       "get": {
-        "description": "",
+        "tags": [
+          "Contacts"
+        ],
+        "description": "Get all contacts",
         "produces": [
           "application/json"
         ],
         "responses": {
           "200": {
             "description": "OK"
-          },
-          "500": {
-            "description": "Internal Server Error"
           }
         }
       },
@@ -49,16 +49,16 @@
         "responses": {
           "201": {
             "description": "Created"
-          },
-          "500": {
-            "description": "Internal Server Error"
           }
         }
       }
     },
     "/contacts/{id}": {
       "get": {
-        "description": "",
+        "tags": [
+          "Contacts"
+        ],
+        "description": "Get a contact by id",
         "produces": [
           "application/json"
         ],
@@ -73,9 +73,6 @@
         "responses": {
           "200": {
             "description": "OK"
-          },
-          "500": {
-            "description": "Internal Server Error"
           }
         }
       },
@@ -83,7 +80,7 @@
         "tags": [
           "Contacts"
         ],
-        "description": "Create a new contact",
+        "description": "Update a contact by id",
         "produces": [
           "application/json"
         ],
@@ -107,14 +104,14 @@
         "responses": {
           "200": {
             "description": "OK"
-          },
-          "500": {
-            "description": "Internal Server Error"
           }
         }
       },
       "delete": {
-        "description": "",
+        "tags": [
+          "Contacts"
+        ],
+        "description": "Delete a contact by id",
         "produces": [
           "application/json"
         ],
@@ -129,9 +126,6 @@
         "responses": {
           "200": {
             "description": "OK"
-          },
-          "500": {
-            "description": "Internal Server Error"
           }
         }
       }

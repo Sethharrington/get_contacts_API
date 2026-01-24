@@ -5,7 +5,7 @@
 GET http://localhost:8080/contacts
 
 ### Get contact by ID
-GET http://localhost:8080/contacts/687aa30e0fbc449862c7b106
+GET http://localhost:8080/contacts/687aa30e0fbc489862c7b163
 
 ### Create a new contact
 POST http://localhost:8080/contacts
@@ -16,11 +16,11 @@ Content-Type: application/json
   "lastName": "LastName",
   "email": "email@ts.co",
   "favoriteColor": "Gray",
-  "birthday": "01/20/3043"
+  "birthday": "01/20/1920"
 }
 
 ### Update a contact by ID
-PUT http://localhost:8080/contacts/696ffad198e6437cc8907dfc
+PUT http://localhost:8080/contacts/687aa30e0fbc489862c7b163
 Content-Type: application/json
 
 {
@@ -28,11 +28,11 @@ Content-Type: application/json
   "lastName": "UpdatedLastName",
   "email": "updatedemail@ts.co",
   "favoriteColor": "Blue",
-  "birthday": "01/20/3043"
+  "birthday": "01/20/2020"
 }
 
 ### Delete a contact by ID
-DELETE http://localhost:8080/contacts/696ffad198e6437cc8907dfc
+DELETE http://localhost:8080/contacts/687aa30e0fbc489862c7b163
 
 
 //////////////////////////////////
@@ -49,7 +49,7 @@ POST https://get-contacts-api.onrender.com/contacts/
 Content-Type: application/json
 
 {
-  "firstName": "FirstName",
+  "firstName": "FirstNameGreat",
   "lastName": "LastName",
   "email": "email@ts.co",
   "favoriteColor": "Gray",
