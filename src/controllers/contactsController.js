@@ -9,16 +9,15 @@ const getAll = async (req, res, next) => {
   #swagger.tags = ['Contacts']
   #swagger.description = 'Get all contacts'
   */
-  const result = await mongodb.getDatabase().collection("Contacts").find({});
-  result
-    .toArray()
-    .then((contacts) => {
+  try {
+    const result = await mongodb.getDatabase().collection("Contacts").find({});
+    result.toArray().then((contacts) => {
       res.setHeader("Content-Type", "application/json");
       res.status(200).json(contacts);
-    })
-    .catch((err) => {
-      next(err);
     });
+  } catch (err) {
+    next(err);
+  }
 };
 const getById = async (req, res, next) => {
   /*

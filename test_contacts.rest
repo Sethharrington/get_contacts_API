@@ -42,22 +42,22 @@ DELETE http://localhost:8080/contacts/687aa30e0fbc489862c7b163
 GET https://get-contacts-api.onrender.com/contacts
 
 ### Get contact by ID
-GET https://get-contacts-api.onrender.com/contacts/687aa30e0fbc449862c7b106
+GET https://get-contacts-api.onrender.com/contacts/687aa30e0fbc449862c7b263
 
 ### Create a new contact
 POST https://get-contacts-api.onrender.com/contacts/
 Content-Type: application/json
 
 {
-  "firstName": "FirstNameGreat",
+  "firstName": "FirstNameGreatNow",
   "lastName": "LastName",
-  "email": "email@ts.co",
-  "favoriteColor": "Gray",
-  "birthday": "01/20/3043"
+  "email": "email@ts.com",
+  "favoriteColor": "Blue",
+  "birthday": "01/20/1910"
 }
 
 ### Update a contact by ID
-PUT https://get-contacts-api.onrender.com/contacts/696fe3d269b8fc873516788c
+PUT https://get-contacts-api.onrender.com/contacts/6975244152d93b337bf84c58
 Content-Type: application/json
 
 {
@@ -65,8 +65,8 @@ Content-Type: application/json
   "lastName": "UpdatedLastName",
   "email": "updatedemail@ts.co",
   "favoriteColor": "Blue",
-  "birthday": "01/20/3043"
+  "birthday": "01/25/1910"
 }
 
 ### Delete a contact by ID
-DELETE https://get-contacts-api.onrender.com/contacts/68827a09a7cd125bba8b3876
+DELETE https://get-contacts-api.onrender.com/contacts/6975244152d93b337bf84c58
